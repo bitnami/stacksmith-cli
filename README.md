@@ -17,7 +17,7 @@ See full example in https://github.com/bitnami-labs/stacksmith-ci-example using 
 
 1. Make sure you have a working account on https://stacksmith.bitnami.com
 
-2. Download the stacksmith client (see the release page) for your platform and copy&paste the output of the following command into a secret env var, e.g. `STACKSMITH_AUTH_TOKEN` on your CI system.
+2. Download the stacksmith client (see the [release page](https://github.com/bitnami/stacksmith-cli/releases)) for your platform and copy&paste the output of the following command into a secret env var, e.g. `STACKSMITH_AUTH_TOKEN` on your CI system.
 
 ```
 stacksmith auth login --print
