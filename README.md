@@ -13,7 +13,12 @@ already builds your application and let Stacksmith build cloud images for you.
 
 See full example in https://github.com/bitnami-labs/stacksmith-ci-example using Travis CI.
 
-## Authentication
+## Configuring CI authorization
+
+If you need to run stacksmith build on another machine, e.g. as part of an automated build job,
+you obviously cannot rely on the interactive `stacksmith auth login` tool on the server.
+
+You can export a token for such purposes by following these instructions:
 
 1. Make sure you have a working account on https://stacksmith.bitnami.com
 
