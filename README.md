@@ -18,16 +18,21 @@ See full example in https://github.com/bitnami-labs/stacksmith-ci-example using 
 If you need to run stacksmith build on another machine, e.g. as part of an automated build job,
 you obviously cannot rely on the interactive `stacksmith auth login` tool on the server.
 
-You can export a token for such purposes by following these instructions:
+You can generate and export a token for such purposes by following these instructions:
 
 1. Make sure you have a working account on https://stacksmith.bitnami.com
 
-2. Download the stacksmith client (see the [release page](https://github.com/bitnami/stacksmith-cli/releases)) for your platform and copy&paste the output of the following command into a secret env var, e.g. `STACKSMITH_AUTH_TOKEN` on your CI system.
+2. Download the stacksmith client (see the [release page](https://github.com/bitnami/stacksmith-cli/releases)) for your platform and authenticate. This command will open a browser window which might ask you to log-in into stacksmith if you haven't already:
 
 ```
-stacksmith auth login --print
+stacksmith auth login
 ```
 
-This command will open a browser window which might ask you to log-in into stacksmith if you haven't already.
-The resulting authentication token lasts only 24h.
-Please [contact us](https://bitnami.com/stacksmith#contact) if you need the enterprise grade access tokens suitable for long running automation.
+
+3. Henerate a new access token. You can add a description to your newly created token so you can later manage your access tokens more easily:
+
+```
+stacksmith auth access-tokens create --description my-CI-integration
+```
+
+4. Copy&paste the output of the previous command (the long string starting with `MDAxOGxvY2F0aW9uI...`) into a secret env var, e.g. `STACKSMITH_AUTH_TOKEN` on your CI system.
