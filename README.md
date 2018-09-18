@@ -35,7 +35,7 @@ stacksmith auth login
 stacksmith auth access-tokens create --description my-CI-integration
 ```
 
-4. Copy&paste the output of the previous command (the long string starting with `MDAxOGxvY2F0aW9uI...`) into a secret env var, e.g. `STACKSMITH_AUTH_TOKEN` on your CI system.
+4. Copy&paste the output of the previous command (the long string starting with `MDAxOGxvY2F0aW9uI...`) into a secret env var, e.g. `STACKSMITH_ACCESS_TOKEN` on your CI system.
 
 ## Consuming build results
 
