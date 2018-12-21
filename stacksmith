@@ -1,0 +1,46 @@
+#!/bin/bash
+
+stacksmith_cmd=stacksmith
+
+if [ "$1" == "--download-version" ]; then
+  version="$2"
+  
+  case "$version" in
+    v*)
+    tag="${version}"
+    ;;
+    *)
+    tag="v${version}"
+  esac
+  shift
+  shift
+  
+  echo "downloading ${version}"
+  
+  case "${OSTYPE}" in
+  darwin*)
+    suffix="-darwin-amd64"
+    ;;
+  win32)
+    suffix=".exe"
+    ;;
+  *)
+    suffix="-linux-amd64"
+    ;;
+  esac
+
+  stacksmith_cmd="$(mktemp)"
+  cleanup() {
+    rm -f "${stacksmith_cmd}"
+  }
+  trap cleanup EXIT INT TERM
+  
+  url="https://github.com/bitnami/stacksmith-cli/releases/download/${tag}/stacksmith${suffix}"
+  curl -Lf -o"${stacksmith_cmd}" "${url}"
+  chmod +x "${stacksmith_cmd}"
+
+fi
+
+
+"${stacksmith_cmd}" "$@"
+
