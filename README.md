@@ -4,6 +4,22 @@ CLI utility to talk to https://stacksmith.bitnami.com
 The main use case is to call this utility from the build automation (CI) tool that
 already builds your application and let Stacksmith build cloud images for you.
 
+## Install
+
+You can fetch a binary for your platform via the [Github releases](https://github.com/bitnami/stacksmith-cli/releases) page. For example, on linux:
+
+```
+  VERSION="<pick the latest release version>"
+  wget https://github.com/bitnami/stacksmith-cli/releases/download/v${VERSION}/stacksmith-linux-amd64 -O /tmp/stacksmith
+  sudo install /tmp/stacksmith /usr/local/bin/stacksmith
+```
+
+The stacksmith CLI is also available as a docker image:
+
+```
+docker run -ti gcr.io/bitnami-labs/stacksmith:${VERSION}
+```
+
 ## Example
 
 1. Create an application on https://stacksmith.bitnami.com
