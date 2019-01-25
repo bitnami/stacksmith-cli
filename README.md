@@ -29,6 +29,16 @@ docker run -ti gcr.io/bitnami-labs/stacksmith:${VERSION}
 
 See full example in https://github.com/bitnami-labs/stacksmith-ci-example using Travis CI.
 
+## Documentation
+
+The CLI tool offers inline documentation for commands and topics:
+
+```
+$ stacksmith help
+$ stacksmith help build
+...
+```
+
 ## Configuring CI authorization
 
 If you need to run stacksmith build on another machine, e.g. as part of an automated build job,
