@@ -20,12 +20,11 @@ The stacksmith CLI is also available as a docker image:
 docker run -ti gcr.io/bitnami-labs/stacksmith:${VERSION}
 ```
 
-## Example
+## First steps
 
-1. Create an application on https://stacksmith.bitnami.com
-2. Create a `Stackerfile.yml` file pointing to your app and your local build artifacts to upload
-3. Depending on the template you might also want to add custom build and run scripts
-4. run `stacksmith build`
+1. Sign up to https://stacksmith.bitnami.com and pick a project
+2. Use `stacksmith init` to create a `Stackerfile.yml` file pointing to your app and your local build artifacts to upload
+4. Run `stacksmith build`
 
 See full example in https://github.com/bitnami-labs/stacksmith-ci-example using Travis CI.
 
