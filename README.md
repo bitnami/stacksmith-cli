@@ -99,3 +99,8 @@ baseImages:
     amiId: "ami-0a313d6098716f372"
     sshUsername: ubuntu
 ```
+
+
+## Reference
+
+go get -u sourcegraph.com/sourcegraph/prototools/cmd/protoc-gen-doc
