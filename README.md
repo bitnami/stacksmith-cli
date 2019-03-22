@@ -104,3 +104,40 @@ baseImages:
     amiId: "ami-0a313d6098716f372"
     sshUsername: ubuntu
 ```
+
+## Defining a multi-image application
+
+You can specify multiple images to build for a single application. Each will be
+built separately, and then the deployment template will be able to reference
+each of the images.
+
+Notes: This currently only works for AWS AMI builds. Other targets will be
+available soon.
+
+In order to specify multiple images use the `images:` key, passing
+an array of image descriptions.
+
+```
+images:
+  - name: "mariadb"
+    files:
+      userScripts:
+        boot: mariadb-boot.sh
+  - name: "app"
+    files:
+      user_scripts:
+        run: app-run.sh
+      userUploads:
+        - app.zip
+```
+
+In addition you will want to specify a deployment template so that
+you can reference each of the images.
+
+```
+deployment_templates:
+  aws: cf.json
+```
+
+See [the stacksmith docs](https://stacksmith.bitnami.com/+/support/creating-a-stack-template#Creating-a-custom-deployment-template)
+for how to provide a custom deployment template.
