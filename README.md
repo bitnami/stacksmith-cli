@@ -29,13 +29,18 @@ See full example in https://github.com/bitnami-labs/stacksmith-ci-example using 
 
 ## Documentation
 
-The CLI tool offers inline documentation for commands and topics:
+You can learn about the possible fields of the `Stackerfile.yml` file in its [reference documentation](https://github.com/bitnami/stacksmith-cli/blob/master/docs/schema.md).
+
+Furthermore, the CLI tool offers inline documentation for commands and topics:
 
 ```
 $ stacksmith help
 $ stacksmith help build
 ...
 ```
+
+Common topics will be presented in this README.
+
 
 ## Configuring CI authorization
 
