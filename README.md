@@ -131,7 +131,7 @@ images:
         - app.zip
 ```
 
-In addition you will want to specify a deployment template so that
+In addition you will need to specify a deployment template so that
 you can reference each of the images.
 
 ```
