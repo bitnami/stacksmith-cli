@@ -77,3 +77,25 @@ $ stacksmith get template -s image_spec.json -o my-helm-chat.tgz
 
 The Build Spec also contains a snapshot of all the installed packages. You may want to instruct your CI system to
 archive this file along with your build artifacts for future reference.
+
+## Using arbitrary base images
+
+You can specify a base image for each platform. E.g. this shows how to use a custom AMI:
+
+```
+baseImages:
+  aws:
+    amiId: "ami-4bf3d731"
+```
+
+Each distribution might have a different convention w.r.t the default username.
+Amazon linux and RHEL use **ec2-user**, but some other distributions use other usernames.
+
+For example here is how to use a Ubuntu base image:
+
+```
+baseImages:
+  aws:
+    amiId: "ami-0a313d6098716f372"
+    sshUsername: ubuntu
+```
