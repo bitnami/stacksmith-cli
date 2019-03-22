@@ -18,6 +18,16 @@
   
   
 
+- [pkg/builder/api/base.proto](#pkg/builder/api/base.proto)
+    - [BaseImageAws](#builder.BaseImageAws)
+    - [BaseImageAzure](#builder.BaseImageAzure)
+    - [BaseImageDocker](#builder.BaseImageDocker)
+    - [BaseImages](#builder.BaseImages)
+  
+  
+  
+  
+
 - [Scalar Value Types](#scalar-value-types)
 
 
@@ -184,6 +194,85 @@ hook in the application binary upload.
 | build | [string](#string) |  |  |
 | boot | [string](#string) |  |  |
 | run | [string](#string) |  |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="pkg/builder/api/base.proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## pkg/builder/api/base.proto
+
+
+
+<a name="builder.BaseImageAws"></a>
+
+### BaseImageAws
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| amiId | [string](#string) |  |  |
+| sshUsername | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="builder.BaseImageAzure"></a>
+
+### BaseImageAzure
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  | This is the resource id of a managed image. Something like: /subscriptions/&lt;subscription id&gt;/resourceGroups/&lt;resource group name&gt;/providers/Microsoft.Compute/images/&lt;image name&gt; |
+
+
+
+
+
+
+<a name="builder.BaseImageDocker"></a>
+
+### BaseImageDocker
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="builder.BaseImages"></a>
+
+### BaseImages
+BaseImages contains per-target base images to be used when creating an image.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| docker | [BaseImageDocker](#builder.BaseImageDocker) |  |  |
+| aws | [BaseImageAws](#builder.BaseImageAws) |  |  |
+| azure | [BaseImageAzure](#builder.BaseImageAzure) |  |  |
 
 
 
