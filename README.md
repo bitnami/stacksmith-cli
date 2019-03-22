@@ -9,14 +9,14 @@ already builds your application and let Stacksmith build cloud images for you.
 You can fetch a binary for your platform via the [Github releases](https://github.com/bitnami/stacksmith-cli/releases) page. For example, on linux:
 
 ```
-  wget https://github.com/bitnami/stacksmith-cli/releases/download/v0.9.0/stacksmith-linux-amd64 -O /tmp/stacksmith
+  wget https://github.com/bitnami/stacksmith-cli/releases/download/v0.9.1/stacksmith-linux-amd64 -O /tmp/stacksmith
   sudo install /tmp/stacksmith /usr/local/bin/stacksmith
 ```
 
 The stacksmith CLI is also available as a docker image:
 
 ```
-docker run -ti gcr.io/bitnami-labs/stacksmith:0.9.0
+docker run -ti gcr.io/bitnami-labs/stacksmith:0.9.1
 ```
 
 ## First steps
